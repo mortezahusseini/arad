@@ -1,0 +1,435 @@
+.slide {
+    position: relative;
+}
+
+.fp-slidesNav.bottom {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 9rem;
+    bottom: 2rem;
+    right: 11.5rem;
+}
+
+.sec-header-top-footer .fp-slidesNav {
+    left: auto;
+}
+
+.fp-slidesNav ul li a span {
+    background: #20242d;
+}
+
+.section__title {
+    position: absolute;
+    color: #a0a0a4;
+    font-size: 20rem;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: 4rem;
+    margin: 0;
+    top: -157px;
+    opacity: 0.15;
+    z-index: 1;
+}
+
+.section__grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100%;
+    position: relative;
+}
+
+.section__grid__cell {
+    -webkit-perspective: 1000px;
+    perspective: 1000px;
+    flex: 0 1 auto;
+}
+
+.section__grid__cell--sm {
+    flex-basis: 340px;
+}
+
+.section__grid__cell--md {
+    flex-basis: 420px;
+}
+
+.card>*:first-child {
+    margin-top: 0;
+}
+
+.card>*:last-child {
+    margin-bottom: 0;
+}
+
+.card--image {
+    max-width: 100%;
+    height: auto;
+    z-index: 1;
+}
+
+.card--text,
+.card--text-transparent {
+    z-index: 2;
+    position: relative;
+}
+
+.card--text::after,
+.card--text-transparent::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.card--text-transparent {
+    padding: 0 15%;
+    text-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+}
+
+.card--text-transparent,
+.card--text-transparent .card__title,
+.card--text-transparent .card__cta {
+    color: #fff;
+}
+
+.card__title {
+    position: relative;
+    width: 33.5rem;
+    max-height: 6.5rem;
+    color: #7f7f7f;
+    font-size: 3.2rem;
+    font-weight: bold;
+    line-height: 4rem;
+    text-align: end;
+    text-transform: uppercase;
+    top: 5.4rem;
+}
+
+.card__cta {
+    float: right;
+    margin-top: 1em;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    line-height: 1;
+    position: relative;
+    /*** Back ***/
+}
+
+.card__cta::after {
+    content: '';
+    position: absolute;
+    bottom: -1em;
+    left: 0;
+    height: 1px;
+    width: 200%;
+    background: currentColor;
+}
+
+.card__cta.card__cta--back {
+    float: none;
+}
+
+.card__cta.card__cta--back::after {
+    left: auto;
+    right: 0;
+    width: 130%;
+}
+
+@-webkit-keyframes animate--fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes animate--fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes animate--slideInUp {
+    0% {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+}
+
+@keyframes animate--slideInUp {
+    0% {
+        -webkit-transform: translateY(100%);
+        transform: translateY(100%);
+    }
+}
+
+@-webkit-keyframes animate--slideInRight {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes animate--slideInRight {
+    0% {
+        -webkit-transform: translateX(-100%);
+        transform: translateX(-100%);
+    }
+}
+
+@-webkit-keyframes animate--slideInDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes animate--slideInDown {
+    0% {
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+    }
+}
+
+@-webkit-keyframes animate--slideInLeft {
+    0% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+}
+
+@keyframes animate--slideInLeft {
+    0% {
+        -webkit-transform: translateX(100%);
+        transform: translateX(100%);
+    }
+}
+
+.section.active:not(.section-has-slide) .animate--fadeSlideInUp,
+.section.active:not(.section-has-slide) .animate--fadeSlideInRight,
+.section.active:not(.section-has-slide) .animate--fadeSlideInDown,
+.section.active:not(.section-has-slide) .animate--fadeSlideInLeft,
+.section.active.section-has-slide .slide.active .animate--fadeSlideInUp,
+.section.active.section-has-slide .slide.active .animate--fadeSlideInRight,
+.section.active.section-has-slide .slide.active .animate--fadeSlideInDown,
+.section.active.section-has-slide .slide.active .animate--fadeSlideInLeft {
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-delay: 0.7s;
+    animation-delay: 0.7s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.section.active:not(.section-has-slide) .animate--fadeSlideInUp,
+.section.active.section-has-slide .slide.active .animate--fadeSlideInUp {
+    -webkit-animation-name: animate--fadeIn, animate--slideInUp;
+    animation-name: animate--fadeIn, animate--slideInUp;
+}
+
+.section.active:not(.section-has-slide) .animate--fadeSlideInRight,
+.section.active.section-has-slide .slide.active .animate--fadeSlideInRight {
+    -webkit-animation-name: animate--fadeIn, animate--slideInRight;
+    animation-name: animate--fadeIn, animate--slideInRight;
+}
+
+.section.active:not(.section-has-slide) .animate--fadeSlideInDown,
+.section.active.section-has-slide .slide.active .animate--fadeSlideInDown {
+    -webkit-animation-name: animate--fadeIn, animate--slideInDown;
+    animation-name: animate--fadeIn, animate--slideInDown;
+}
+
+.section.active:not(.section-has-slide) .animate--fadeSlideInLeft,
+.section.active.section-has-slide .slide.active .animate--fadeSlideInLeft {
+    -webkit-animation-name: animate--fadeIn, animate--slideInLeft;
+    animation-name: animate--fadeIn, animate--slideInLeft;
+}
+
+#section-1__slide-1__card-1 {
+    -webkit-transform-origin: 100% 50%;
+    transform-origin: 100% 50%;
+    -webkit-transform: translateX(5%) rotateY(10deg);
+    transform: translateX(5%) rotateY(10deg);
+}
+
+#section-1__slide-1__card-2 {
+    -webkit-transform: translate(-5%, 25%);
+    transform: translate(-5%, 25%);
+}
+
+#section-1__slide-2__card-1 {
+    border-radius: 50%;
+}
+
+.div-sec-slider-header {
+    flex: 0 0 74.7%;
+    max-width: 74.7%;
+}
+
+.fig-slider-prodouct {
+    position: relative;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    height: 47.6rem;
+}
+
+.section__grid__cell {
+    z-index: 2020;
+}
+
+.fig-slider-prodouct img {
+    position: absolute;
+}
+
+.fig-slider-prodouct .card1 {
+    transform: rotate(17deg) !important;
+    left: -12.3rem;
+    top: 22rem;
+}
+
+.fig-slider-prodouct .card2 {
+    left: 4.5rem;
+    top: -9.3rem;
+}
+
+.fig-slider-prodouct .card3 {
+    left: 10.1rem;
+    top: 13.4%;
+}
+
+.fig-slider-prodouct .card4 {
+    left: 33.4rem;
+    bottom: 4.1rem;
+}
+
+.fig-slider-prodouct .card5 {
+    left: 29.7%;
+    top: 8.6rem;
+}
+
+.fig-slider-prodouct .card6 {
+    left: 34.4%;
+    top: 30.9%;
+}
+
+.fig-slider-prodouct .card7 {
+    top: -0.7%;
+    left: 42.3%;
+}
+
+.fig-slider-prodouct .card8 {
+    left: 50.1%;
+    bottom: 20.8%;
+}
+
+.fig-slider-prodouct .card9 {
+    left: 66.7%;
+    top: 7.6rem;
+}
+
+.fig-slider-prodouct .card10 {
+    left: 90%;
+    bottom: 8.6rem;
+}
+
+#section-1,
+.sec-header-top-footer,
+.fullpage-wrapper {
+    max-height: 58.5rem;
+    width: 100%;
+}
+
+.header-sec-grid-slider {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0 0 0 30px;
+}
+
+.sec-header-top-footer #fp-nav ul li a span,
+.sec-header-top-footer .fp-slidesNav ul li a span {
+    border-radius: 0;
+    width: 3rem;
+    height: 0.1rem;
+    background: #bbb;
+}
+
+.sec-header-top-footer .fp-slidesNav ul li a.active span {
+    height: 0.2rem;
+    margin: 0
+}
+
+#fp-nav ul li,
+.fp-slidesNav ul {
+    display: flex;
+    align-items: center;
+}
+
+#fp-nav ul li,
+.fp-slidesNav ul li {
+    display: flex;
+    align-items: center;
+    width: 3rem;
+    height: 0.2rem;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+
+#fp-nav ul li:hover a span,
+.fp-slidesNav ul li:hover a span {
+    width: 3rem;
+    height: 0.1rem;
+    margin: 0;
+}
+
+#fp-nav ul li a.active span,
+#fp-nav ul li:hover a.active span,
+.fp-slidesNav ul li a.active span,
+.fp-slidesNav ul li:hover a.active span {
+    width: 3rem;
+    height: 0.1rem;
+    margin: 0;
+    border-radius: 0;
+    background: #e70012;
+}
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+    left: 0;
+    top: auto;
+    margin: 0;
+}
+
+#fp-nav ul li a,
+.fp-slidesNav ul li a {
+    display: flex;
+    align-items: center;
+}
+
+#fp-nav ul li:not(:last-child),
+.fp-slidesNav ul li:not(:last-child) {
+    margin-left: 10px;
+}
+
+#fullpage .a-see-more {
+    flex: auto;
+    position: absolute;
+    height: 9rem;
+    padding: 0 4.9rem;
+    width: 26.8rem;
+    bottom: 2rem;
+    left: 9.7rem;
+}
